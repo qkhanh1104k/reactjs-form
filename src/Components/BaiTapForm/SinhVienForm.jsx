@@ -94,28 +94,20 @@ class SinhVienForm extends Component {
     this.props.dispatch(action);
     this.luuStorage();
   };
-  luuStorage = () => {
-    let stringArrSinhVien = JSON.stringify(this.props.mangSinhVien);
-    localStorage.setItem("arrSinhVien", stringArrSinhVien);
-  };
-
+  
   handleUpdate = (e) => {
     e.preventDefault();
     const newSinhVien = { ...this.state.values };
     const action = changeData(newSinhVien);
     this.props.dispatch(action);
   };
-  // layStore = ()=>{
-  //   if(localStorage.getItem("arrSinhVien")){
-  //     let arrSinhVien = JSON.parse(localStorage.getItem("arrSinhVien"))
-  //     return arrSinhVien
-  //   }
-  //   return[];
-  // }
-  // static getDerivedStateFromProps(newProps,currentState){
-  //   let mangSinhVienStorage = this.layStore()
-  //   this.props.mangSinhVien = mangSinhVienStorage
-  // }
+
+  luuStorage = () => {
+  let stringArrSinhVien = JSON.stringify(this.props.mangSinhVien);
+    localStorage.setItem("arrSinhVien", stringArrSinhVien);
+  };
+  
+  
 
   render() {
     return (
